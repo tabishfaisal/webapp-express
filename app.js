@@ -1,9 +1,12 @@
 const express = require('express');
+const movieRuoter = require('./Ruotes/movieRuoter');
 const app = express();
 const PORT = 3000;
 
+app.use(express.static('./public'));
 app.use(express.json());
 
+app.use('/movies',movieRuoter);
 
 
 app.listen(PORT,()=>{
