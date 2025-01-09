@@ -22,7 +22,7 @@ function show(req, res){
         const reviewsSql = `SELECT * FROM reviews WHERE movie_id = ?`;
         connection.query(reviewsSql,[id],(error,reviews)=>{
             if(error) return res.status(500).json({error: 'error'});
-            movieWithId.movies = reviews;
+            movieWithId.reviews = reviews;
             res.status(200).json(movieWithId)
         })
     });
